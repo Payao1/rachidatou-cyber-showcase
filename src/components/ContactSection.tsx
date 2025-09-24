@@ -32,8 +32,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "rachidatou.payao@example.com",
-      action: "mailto:rachidatou.payao@example.com",
+      value: "rachidatoupayao42@gmail.com",
+      action: "mailto:rachidatoupayao42@gmail.com",
       color: "cyber-blue"
     },
     {
@@ -46,8 +46,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Téléphone",
-      value: "Disponible sur demande",
-      action: null,
+      value: "65487964",
+      action: "tel:65487964",
       color: "cyber-purple"
     }
   ];

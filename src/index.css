@@ -2,41 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cybersecurity Portfolio Design System - Dark tech theme with cyber accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cyber Dark Theme */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 224 35% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 224 35% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 197 71% 55%;
+    --primary-foreground: 222 84% 4.9%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 224 35% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 224 35% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 120 100% 45%;
+    --accent-foreground: 222 84% 4.9%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 224 35% 15%;
+    --input: 224 35% 15%;
+    --ring: 197 71% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Cyber-specific colors */
+    --cyber-blue: 197 71% 55%;
+    --cyber-green: 120 100% 45%;
+    --cyber-purple: 270 95% 75%;
+    --cyber-red: 0 84% 60%;
+    --terminal-green: 120 75% 50%;
+    
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-blue)), hsl(var(--cyber-purple)));
+    --gradient-matrix: linear-gradient(180deg, hsl(var(--background)), hsl(224 35% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(224 35% 8%), hsl(224 35% 12%));
+    
+    /* Shadows */
+    --shadow-cyber: 0 0 20px hsl(var(--cyber-blue) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--cyber-green) / 0.2);
+    --shadow-card: 0 8px 32px hsl(222 84% 4.9% / 0.4);
+
+    /* Animations */
+    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.5s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -103,3 +123,84 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+  /* Cyber utility classes */
+  .cyber-glow {
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .matrix-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .cyber-gradient {
+    background: var(--gradient-cyber);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .text-cyber-blue {
+    color: hsl(var(--cyber-blue));
+  }
+  
+  .text-cyber-green {
+    color: hsl(var(--cyber-green));
+  }
+  
+  .text-terminal-green {
+    color: hsl(var(--terminal-green));
+  }
+  
+  /* Cyber animations */
+  @keyframes cyber-pulse {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--cyber-blue) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--cyber-blue) / 0.8), 0 0 30px hsl(var(--cyber-blue) / 0.3);
+    }
+  }
+  
+  @keyframes matrix-rain {
+    0% {
+      opacity: 1;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh);
+    }
+  }
+  
+  @keyframes terminal-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .animate-cyber-pulse {
+    animation: cyber-pulse 2s ease-in-out infinite;
+  }
+  
+  .animate-terminal-blink {
+    animation: terminal-blink 1s infinite;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--cyber-blue));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--cyber-blue) / 0.8);
+  }

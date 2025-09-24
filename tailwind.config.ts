@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Cyber-specific colors
+        cyber: {
+          blue: "hsl(var(--cyber-blue))",
+          green: "hsl(var(--cyber-green))",
+          purple: "hsl(var(--cyber-purple))",
+          red: "hsl(var(--cyber-red))",
+        },
+        terminal: {
+          green: "hsl(var(--terminal-green))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -56,7 +56,7 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       name: "LinkedIn",
-      url: "#",
+      url: "https://www.linkedin.com/in/rachidatou-emma-payao-519604220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       color: "text-cyber-blue hover:text-cyber-blue"
     },
     {
@@ -68,7 +68,7 @@ const ContactSection = () => {
     {
       icon: FileText,
       name: "CV",
-      url: "#",
+      url: "https://www.canva.com/design/DAGz2UgkzUI/PUqlyFFIuvYsIg2GsCRbzA/edit",
       color: "text-cyber-purple hover:text-cyber-purple"
     }
   ];
@@ -285,6 +285,7 @@ const ContactSection = () => {
                   variant="outline"
                   size="lg"
                   className="border-terminal-green text-terminal-green hover:bg-terminal-green hover:text-primary-foreground"
+                  onClick={() => window.open("https://www.canva.com/design/DAGz2UgkzUI/PUqlyFFIuvYsIg2GsCRbzA/edit", "_blank")}
                 >
                   Télécharger mon CV
                 </Button>
